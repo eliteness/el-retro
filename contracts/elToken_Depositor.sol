@@ -95,7 +95,7 @@ contract elToken_Depositor {
 		require(_main.amount > 0, "Dirty veNFT!");
 		int _ibase = _main.amount;	//pre-cast to int
 		uint256 _base = uint256(_ibase);
-		//veToken.safeTransferFrom(msg.sender, address(this), _id);
+		veToken.safeTransferFrom(msg.sender, address(this), _id);	//important (bug)fix!
 		veToken.merge(_id,ID);
 		IVotingEscrow.LockedBalance memory _merged = veToken.locked(ID);
 		int _in = _merged.amount - _main.amount;
@@ -116,7 +116,7 @@ contract elToken_Depositor {
 			uint256 _amt = (_inc * _ts) / _base;
 			elToken.mint(_amt, msg.sender);
 			emit Deposit(msg.sender, _id, _inc, _amt, block.timestamp);
-			//minted+=_amt;
+			minted+=_amt;
 			return _amt;
 		}
 	}
