@@ -5,7 +5,7 @@
 <meta name="keywords" content="Ftm.guru, Guru Network, Finance, Decentralized Finance,  MATIC, Arbitrum, defi, Airdrop, RETRO, RETRO, Retro, Solidly, ftm.guru">
 <title>El Retro: veRETRO Liquid Wrapper | FTM.guru</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="https://dexapi.chronos.exchange/tokens/elRETRO.png"/>
+	<link rel="shortcut icon" href="https://ftm.guru/icons/elretro.svg"/>
 	<link rel="stylesheet" href="e.css"/>
 	<body>
 		<div class="partnership">
@@ -30,7 +30,7 @@
 				<br>
 				<div class="input-amount-els">
 					<div>
-						<img class="bigthumb" src="https://dexapi.chronos.exchange/tokens/elRETRO.png" style="border-radius:25%"/>
+						<img class="bigthumb" src="https://ftm.guru/icons/elretro.svg" style="border-radius:25%"/>
 						<img class="bigthumb_sub" src="img/lock.svg" style="opacity: 0;">
 					</div>
 					<div class="nft-amt-nums">
@@ -53,7 +53,7 @@
 				<div class="input-amount-els">
 					<div>
 						<img class="bigthumb" src="img/bank.svg"/>
-						<img class="bigthumb_sup" src="img/elretro.png" style="opacity: 0;">
+						<img class="bigthumb_sup" src="img/elretro.svg" style="opacity: 0;">
 					</div>
 					<div class="nft-amt-nums">
 						<div class="nft-amtl-desc">
@@ -71,39 +71,52 @@
 				<br>
 				<span class="nft-amtl" id="nft-tl"></span>
 				<br><br>
-				<div class="hr-nft"></div>
-				<br><br><br>
-				<div class="earn-stats">
-					<div class="nft-amtl-desc">
-						$<span style="font-family: light_italic;" id="bal_tvl">???.???</span>
-						<br><b>T.V.L.</b>
-					</div>
-					<div class="nft-amtl-desc">
-						<span style="font-family: light_italic;" id="bal_apr">???.???</span>%
-						<br><b>A.P.R.</b>
-					</div>
-				</div>
-				<br><br><br>
 				<div class="input-amount-els">
 					<div>
 						<img class="bigthumb" src="https://ftm.guru/icons/matic.svg"/>
-						<img class="bigthumb_sup" src="img/elretro.png" style="opacity: 0;">
+						<img class="bigthumb_sup" src="img/elretro.svg" style="opacity: 0;">
 					</div>
 					<div class="nft-amt-nums">
-						<span class="light-in" style="margin: 0;">Total Earnings</span>
+						<span class="light-in" style="margin: 0;">Claimable Earnings:</span>
 						<br>
 						<div class="nft-amtl-desc">
-							<span style="font-family: light_italic;" id="bal_tr0">???.???</span>
+							<span style="font-family: light_italic;" id="bal_r0">???.???</span>
 							<b>MATIC</b>
 						</div>
-						<span style="font-family: light_italic;">Unclaimed: </span>
-						<span style="font-family: " id="bal_r0">??????</span>
+						<span style="font-family: light_italic;">Total Earnings:</span>
+						<span style="font-family: " id="bal_tr0">??????</span> MATIC
+						<button class="submit equal-gradient" onclick="claim()" style="margin-top: 10px;min-width:100%">
+							<span id="claim-offer">Claim All Rewards</span>
+						</button>
 					</div>
 				</div>
-				<div style="margin-top: -25px;" align="center">
-					<button class="submit equal-gradient" onclick="claim()"><span id="claim-offer">Claim All Rewards</span></button>
-				</div>
+
 				<br><br>
+
+
+				<div class="hr-nft"></div>
+				<br><br>
+				<div class="earn-stats" style="font-size:1.25em">
+
+					<div class="nft-amtl-desc earn-stats-key"><span style="font-family: light_italic;">elRETRO Staking T.V.L.</span></div>
+					<div class="nft-amtl-desc earn-stats-val">$<b id="bal_tvl">?</b><br><br></div>
+
+					<div class="nft-amtl-desc earn-stats-key"><span style="font-family: light_italic;">Claimable MATIC Rewards A.P.R.</span></div>
+					<div class="nft-amtl-desc earn-stats-val"><b id="bal_apr">?</b>%</div>
+
+					<div class="nft-amtl-desc earn-stats-key"><span style="font-family: light_italic;">Autocompounding Rebase A.P.R.</span></div>
+					<div class="nft-amtl-desc earn-stats-val"><b id="bal_reb_apr">?</b>%</div>
+
+					<div class="nft-amtl-desc earn-stats-key"><span style="font-family: light_italic;">Total elRETRO Staking Yield</span></div>
+					<div class="nft-amtl-desc earn-stats-val"><b id="bal_tot_apr">?</b>%<br><br></div>
+
+					<div class="nft-amtl-desc earn-stats-key"><span style="font-family: light_italic;">Splitting Potential per elRETRO</span></div>
+					<div class="nft-amtl-desc earn-stats-val"><b id="mintrate">?</b> veRETRO</div>
+
+				</div>
+
+				<br><br>
+
 			</div>
 			<!--
 			<div style="margin-top: -25px;" align="center">
@@ -205,11 +218,11 @@
 				POOLID = "v0.1.0";
 
 				BASENAME = "RETRO";
-				BASELOGO = "https://ftm.guru/icons/retro.png";
+				BASELOGO = "https://ftm.guru/icons/retro.svg";
 				BASE = "0xbfa35599c7aebb0dace9b5aa3ca5f2a79624d8eb";
 
 				WRAPNAME = "elRETRO";
-				WRAPLOGO = "https://ftm.guru/icons/elretro.png";
+				WRAPLOGO = "https://ftm.guru/icons/elretro.svg";
 				WRAP = "0xfab311fe3e3be4bb3fed77257ee294fb22fa888b";
 
 				ID = 2153;
