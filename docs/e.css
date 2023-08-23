@@ -542,3 +542,12 @@ textarea:focus, input:focus {
 	animation: none;
 	transform: revert;
 }
+
+.earn-stats-key {
+    text-align:left;
+    font-size:1.25em;
+}
+.earn-stats-val {
+    text-align:right;
+    font-size:1.25em;
+}
