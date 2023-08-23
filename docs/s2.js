@@ -220,23 +220,23 @@ async function pre_stats() {
 	lp = new ethers.Contract(WRAP, LPABI, prepro);
 	fa = new ethers.Contract(FARM, FARABI, prepro);
 	vm = new ethers.Contract(VENAMM,VMABI, prepro);
-	$("mintrate").innerHTML = ((await vm.price() )/1e18).toFixed(4);
+	//$("mintrate").innerHTML = ((await vm.price() )/1e18).toFixed(4);
 	bal = await Promise.all([
 		fa.tvl(),
 		fa.aprs(),
 		vm.price()
 	]);
-	bal[2]*=1e4;
+	///bal[2]*=1e4;
 	$("bal_tvl").innerHTML = fornum5(bal[0],18,2);
 	$("bal_apr").innerHTML = fornum5(bal[1][0],18,2);
-	$("mintrate").innerHTML = fornum5(bal[2],18,2);
+	$("mintrate").innerHTML = fornum5(bal[2],18,4);
 	//rebase apr
 	wks = Math.floor(( Date.now() - REBASE_1) / (86400e3 * 7)) ;
 	//rwr = (bal[2]/1e18 - 1) / wks;
 	//rbapr = (1+rwr)**52 * 100;
 	rwr = (bal[2]/1e18)**(1/wks);
 	rbapr = (rwr**52-1) * 100;
-	$("mintrate").innerHTML = fornum(bal[2],18);
+	//$("mintrate").innerHTML = fornum(bal[2],18);
 	$("bal_reb_apr").innerHTML = fornum5(rbapr, 0, 2);
 	$("bal_tot_apr").innerHTML = fornum5(rbapr + bal[1][0]/1e18, 0, 2);
 	//console.log("bal t/a: ", fornum(bal[0],18), fornum(bal[1][0],18) )
