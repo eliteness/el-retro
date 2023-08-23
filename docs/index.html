@@ -8,69 +8,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://ftm.guru/icons/retro.svg"/>
 <link rel="stylesheet" href="e.css"/>
-	<body>
-		<div class="partnership">
-			<h1><span>Mint_ elRETRO </span></h1>
-			<h2>Convert Your Locked veRETRO NFT into Liquid elRETRO Tokens</h2>
-		</div>
-		<div class="mechanism">
-			<div class="amount">
-				<br>
-				<p id="p_cw"><span id="cw" onclick="cw()">Hello 👋 <span id="cw_og">Connect wallet!</span></p>
-				<div align="center">
-					<select class="equal-gradient" id="nft-sel" onchange="quote()">
-						<option value="" selected>Choose a NFT</option>
-					</select>
-				</div>
-				<p><span id="nft-bal">Balance: Loading..</span></p>
+<body>
+	<div class="partnership">
+		<h1><span>Mint_ elRETRO </span></h1>
+		<h2>Convert Your Locked veRETRO NFT into Liquid elRETRO Tokens</h2>
+	</div>
+	<div class="mechanism">
+		<div class="amount">
+			<br>
+			<p id="p_cw"><span id="cw" onclick="cw()">Hello 👋 <span id="cw_og">Connect wallet!</span></p>
+			<div align="center">
+				<select class="equal-gradient" id="nft-sel" onchange="quote()">
+					<option value="" selected>Choose a NFT</option>
+				</select>
 			</div>
-			<div class="input-amount">
-				<br>
-				<div class="input-amount-els">
-					<div>
-						<img class="bigthumb" src="https://ftm.guru/icons/retro.svg" style="border-radius:100px;background:rgba(0,0,0,0.9)"/>
-						<img class="bigthumb_sub" src="img/lock.svg"/>
-					</div>
-					<div class="nft-amt-nums">
-						<span class="nft-amtl" id="nft-amt"><span class="prefill-num">Convert veNFTs of</span></span>
-						<div class="nft-amtl-desc">
-							Locked <b>veRETRO</b>
-						</div>
-					</div>
+			<p><span id="nft-bal">Balance: Loading..</span></p>
+		</div>
+		<div class="input-amount">
+			<br>
+			<div class="input-amount-els">
+				<div>
+					<img class="bigthumb" src="https://ftm.guru/icons/retro.svg" style="border-radius:100px;background:rgba(0,0,0,0.9)"/>
+					<img class="bigthumb_sub" src="img/lock.svg"/>
 				</div>
-				<br>
-				<span class="nft-amtl" id="nft-tl"></span>
-				<br><br>
-				<div class="hr-nft"></div>
-				<br><br>
-				<div class="input-amount-els">
-					<div>
-						<img class="bigthumb" src="https://ftm.guru/icons/retro.svg" style="border-radius:25%"/>
-						<img class="bigthumb_sub" src="https://ftm.guru/icons/64.png" style="opacity: ;border-radius:25%">
-					</div>
-					<div class="nft-amt-nums">
-						<span class="nft-amtl" id="nft-offer"><span class="prefill-num">Earn MATIC by staking</span></span>
-						<div class="nft-amtl-desc">
-							Liquid $<b>elRETRO</b>
-						</div>
+				<div class="nft-amt-nums">
+					<span class="nft-amtl" id="nft-amt"><span class="prefill-num">Convert veNFTs of</span></span>
+					<div class="nft-amtl-desc">
+						Locked <b>veRETRO</b>
 					</div>
 				</div>
 			</div>
-			<div style="margin-top: -25px;" align="center">
-				<button class="submit equal-gradient" onclick="sell()"><span id="claim-offer">Select your veNFT</span></button>
-				<br><br>
-				<span style="font-size:1.25em;font-family:light">1 elRETRO = <span id="mintrate">?</span> RETRO</span>
-				<br><br>
+			<br>
+			<span class="nft-amtl" id="nft-tl"></span>
+			<br><br>
+			<div class="hr-nft"></div>
+			<br><br>
+			<div class="input-amount-els">
+				<div>
+					<img class="bigthumb" src="https://ftm.guru/icons/retro.svg" style="border-radius:25%"/>
+					<img class="bigthumb_sub" src="https://ftm.guru/icons/64.png" style="opacity: ;border-radius:25%">
+				</div>
+				<div class="nft-amt-nums">
+					<span class="nft-amtl" id="nft-offer"><span class="prefill-num">Earn MATIC by staking</span></span>
+					<div class="nft-amtl-desc">
+						Liquid $<b>elRETRO</b>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="analytics">
-			<a class="equal-gradient-white">Mint</a>
-			<a onclick="notice('<h1>Soon™</h1>elRETRO Staking Rewards start next week.<br><br>Get ready to earn MATIC!')">Stake</a>
-			<!--<a href="staking">Stake</a>-->
-			<a href="https://dune.com/eliteness/" target="_blank">Analytics</a>
-			<a href="https://retro.finance" target="_blank">Trade</a>
-			<a href="https://ftm.guru/docs" target="_blank">Docs</a>
+		<div style="margin-top: -25px;" align="center">
+			<button class="submit equal-gradient" onclick="sell()"><span id="claim-offer">Select your veNFT</span></button>
+			<br><br>
+			<span style="font-size:1.25em;font-family:light">1 elRETRO = <span id="mintrate">?</span> RETRO</span>
+			<br><br>
 		</div>
+	</div>
+	<div class="analytics">
+		<a class="equal-gradient-white">Mint</a>
+		<a href="staking">Stake</a>
+		<a href="https://dune.com/eliteness/" target="_blank">Analytics</a>
+		<a href="https://retro.finance" target="_blank">Trade</a>
+		<a href="https://ftm.guru/docs" target="_blank">Docs</a>
+	</div>
 
 
 	<div id="note" class="overlay">
