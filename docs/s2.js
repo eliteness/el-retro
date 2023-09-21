@@ -289,7 +289,7 @@ async function deposit(ismax) {
 	console.log(_tr);
 	notice(`
 		<h3>Depositing ${WRAPNAME}!</h3>
-		Get ready to start enjoying BNB rewards!<br>
+		Get ready to start enjoying ${TEARNSYM.join(" + ")} rewards!<br>
 		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
 	`);
 	_tw = await _tr.wait()
@@ -327,7 +327,7 @@ async function withdraw(ismax) {
 	console.log(_tr);
 	notice(`
 		<h3>Unstaking ${WRAPNAME}!</h3>
-		We hope you are enjoying your BNB rewards!<br>
+		We hope you are enjoying your ${TEARNSYM.join(" + ")} rewards!<br>
 		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
 	`);
 	_tw = await _tr.wait()
@@ -380,7 +380,7 @@ async function claim() {
 	notice(`
 		<h3>Claiming Rewards!</h3>
 		<img style='height:20px;position:relative;top:4px' src="${TEARNIMG[0]}">
-		<u>${ $("bal_r0").innerHTML } ${TEARNSYM[0]}</u><br><br>
+		<u>${ $("bal_r0").innerHTML } ${TEARNSYM.join(" + ")}</u><br><br>
 		<h4><u><i>Please Confirm this transaction in your wallet!</i></u></h4>
 	`);
 	let _tr = await fa.getReward(TEARNED[0]);
@@ -388,7 +388,7 @@ async function claim() {
 	notice(`
 		<h3>Rewards are on their way!</h3>
 		<img style='height:20px;position:relative;top:4px' src="${TEARNIMG[0]}">
-		<u>${ $("bal_r0").innerHTML } ${TEARNSYM[0]}</u><br><br>
+		<u>${ $("bal_r0").innerHTML } ${TEARNSYM.join(" + ")}</u><br><br>
 		We hope you enjoy staking with us!<br>
 		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
 	`);
@@ -398,7 +398,7 @@ async function claim() {
 		<h3>Rewards Credited!</h3>
 		<br><br>
 		<img style='height:20px;position:relative;top:4px' src="${TEARNIMG[0]}">
-		<u>${ $("bal_r0").innerHTML } ${TEARNSYM[0]}</u><br><br>
+		<u>${ $("bal_r0").innerHTML } ${TEARNSYM.join(" + ")}</u><br><br>
 		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
 	`);
 }
