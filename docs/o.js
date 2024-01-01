@@ -225,7 +225,7 @@ async function oRetroToElRetro() {
 	_oamt = $("inp-oamt").value;
 	if(!isFinite(_oamt)){notice("Invalid oToken Input!"); return;}
 	_oamt = BigInt(_oamt * 1e18)
-	_OT = new ethers.Contract(OTOKEN, ["function balanceOf(address) public view returns(uint)","function approve(address,uint)","function approval(address,address) public view returns(uint)"], signer);
+	_OT = new ethers.Contract(OTOKEN, ["function balanceOf(address) public view returns(uint)","function approve(address,uint)","function allowance(address,address) public view returns(uint)"], signer);
 
 	alvo = await Promise.all([
 		_OT.allowance(window.ethereum.selectedAddress, O_TO_E),
