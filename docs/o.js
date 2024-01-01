@@ -225,7 +225,7 @@ async function oRetroToElRetro() {
 	_oamt = $("inp-oamt").value;
 	if(!isFinite(_oamt)){notice("Invalid oToken Input!"); return;}
 	_oamt = BigInt(_oamt * 1e18)
-	_OT = new ethers.Contract(OTOKEN, ["function balanceOf(address) public view returns(uint)","function approve(address,uint)","function allowance(address,address) public view returns(uint)"], signer);
+	_OT = new ethers.Contract(OTOKEN, ["function balanceOf(address) public view returns(uint)","function approve(address,uint)","function allowance(address,address) public view returns(uint)","function exerciseWrap(uint) returns(uint _elamt)"], signer);
 
 	alvo = await Promise.all([
 		_OT.allowance(window.ethereum.selectedAddress, O_TO_E),
@@ -238,7 +238,7 @@ async function oRetroToElRetro() {
 			${WRAPNAME} Depositor requires your approval to complete this conversion.<br><br>
 			<h4><u><i>Please Confirm this transaction in your wallet!</i></u></h4>
 		`);
-		let _tr = await ve.approve(O_TO_E, ethers.constants.MaxUint256);
+		let _tr = await _OT.approve(O_TO_E, ethers.constants.MaxUint256);
 		console.log(_tr);
 		notice(`
 			<h3>Submitting Approval Transaction!</h3>
@@ -253,7 +253,7 @@ async function oRetroToElRetro() {
 			Please confirm the Trade at your wallet provider now.
 		`);
 	}
-	_wamt = _oamt / Number($("mintrate").innerHTML);
+	_wamt = Number(_oamt) / Number($("mintrate").innerHTML);
 	notice(`
 		<h3>Order Summary</h3>
 		<b>Exercising oToken:</b><br>
@@ -263,7 +263,7 @@ async function oRetroToElRetro() {
 
 		<h4><u><i>Please Confirm this transaction in your wallet!</i></u></h4>
 	`);
-	let _tr = await vm.deposit(_id);
+	let _tr = await _OT.exerciseWrap(_oamt);
 	console.log(_tr);
 	notice(`
 		<h3>Order Submitted!</h3>
