@@ -232,7 +232,7 @@ async function oRetroToElRetro() {
 		_OT.balanceOf(window.ethereum.selectedAddress)
 	]);
 	console.log("alvo: ",alvo);
-	if(Number(alvo[0]) < Number(alvo[1]) ) {
+	if(Number(alvo[0]) < _oamt ) {
 		notice(`
 			<h3>Approval required</h3>
 			${WRAPNAME} Depositor requires your approval to complete this conversion.<br><br>
