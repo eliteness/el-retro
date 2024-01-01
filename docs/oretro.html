@@ -4,70 +4,59 @@
 <head>
 <meta name="description" content="El Retro: veRETRO Liquid Wrapper | FTM.guru">
 <meta name="keywords" content="Ftm.guru, Guru Network, Finance, Decentralized Finance, MATIC, Arbitrum, defi, Airdrop, RETRO, El Retro, Retro, Solidly, ftm.guru">
-<title>El Retro: veRETRO Liquid Wrapper | FTM.guru</title>
+<title>El Retro: oRETRO Liquid Wrapper | FTM.guru</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://ftm.guru/icons/elretro.png"/>
 <link rel="stylesheet" href="e.css"/>
 <body>
 	<div class="partnership">
 		<h1><span>Mint_ elRETRO </span></h1>
-		<h2>Convert Your Locked veRETRO NFT into Liquid elRETRO Tokens</h2>
+		<h2>Exercise Your oRETRO Options into Liquid elRETRO Tokens</h2>
 	</div>
 	<div class="mechanism">
-		<div class="analytics" style="position:relative;top:-16px">
-			<a class="equal-gradient-white" href="oretro">Mint with oRETRO</a>
-			<a class="equal-gradient-white" href="./">Mint with veRETRO</a>
-		</div>
-		<div class="amount">
-			<br>
-			<br>
-			<br>
-			<p id="p_cw"><span id="cw" onclick="cw()">Hello 👋 <span id="cw_og">Connect wallet!</span></p>
-			<div align="center">
-				<select class="equal-gradient" id="nft-sel" onchange="quote()">
-					<option value="" selected>Choose a NFT</option>
-				</select>
-			</div>
-			<p><span id="nft-bal">Balance: Loading..</span></p>
-		</div>
+	<div class="analytics" style="position:relative;top:-16px">
+		<a class="equal-gradient-white" href="oretro">Mint with oRETRO</a>
+		<a class="equal-gradient-white" href="./">Mint with veRETRO</a>
+	</div>
+		<p id="p_cw"><span id="cw" onclick="cw()">Hello 👋</span> <span id="cw_og">Connect wallet!</span></p>
 		<div class="input-amount">
 			<br>
 			<div class="input-amount-els">
 				<div>
-					<img class="bigthumb" src="https://ftm.guru/icons/retro.svg" style="border-radius:100px;background:rgba(0,0,0,0.9)"/>
-					<img class="bigthumb_sub" src="img/lock.svg"/>
+					<img class="bigthumb" src="https://ftm.guru/icons/retro.svg" style="border-radius:25%"/>
+					<img class="bigthumb_sub" src="img/lock.svg" style="opacity: 0;">
 				</div>
 				<div class="nft-amt-nums">
-					<span class="nft-amtl" id="nft-amt"><span class="prefill-num">Convert veNFTs of</span></span>
 					<div class="nft-amtl-desc">
-						Locked <b>veRETRO</b>
+						Exercise <b>oRETRO</b>
 					</div>
+					<input class="light-in in-box" placeholder="Enter Amount" style="margin: 0;" id="inp-oamt">
+					<!--<button class="btn-max" onclick='$("in_d").value=$("bal_lp").textContent'>Max</button>-->
+					<span style="font-family: light_italic;">Available: </span>
+					<span style="font-family:" id="bal_o">??????</span>
 				</div>
 			</div>
 			<br>
-			<span class="nft-amtl" id="nft-tl"></span>
-			<br><br>
-			<div class="hr-nft"></div>
-			<br><br>
 			<div class="input-amount-els">
 				<div>
 					<img class="bigthumb" src="https://ftm.guru/icons/elretro.png" style="border-radius:25%"/>
-					<img class="bigthumb_sub" src="https://ftm.guru/icons/64.png" style="opacity:0 ;border-radius:25%">
+					<img class="bigthumb_sub" src="img/lock.svg" style="opacity: 0;">
 				</div>
-				<div class="nft-amt-nums">
-					<span class="nft-amtl" id="nft-offer"><span class="prefill-num">Earn MATIC by staking</span></span>
-					<div class="nft-amtl-desc">
-						Liquid $<b>elRETRO</b>
-					</div>
+				<div class="nft-amt-nums"align="center">
+					<div >1 elRETRO = <span id="mintrate"></span> oRETRO</div>
+					<button onclick="oRetroToElRetro()" class="equal-gradient">
+						<div class="nft-amtl-desc">
+						Obtain <b>elRETRO</b>
+						</div>
+					</button>
+					<br>
+					<br>
+					<!--<button class="btn-max" onclick='$("in_d").value=$("bal_lp").textContent'>Max</button>-->
 				</div>
 			</div>
+			<br>
 		</div>
-		<div style="margin-top: -25px;" align="center">
-			<button class="submit equal-gradient" onclick="sell()"><span id="claim-offer">Select your veNFT</span></button>
-			<br><br>
-			<span style="font-size:1.25em;font-family:light">1 elRETRO = <span id="mintrate">?</span> RETRO</span>
-			<br><br>
-		</div>
+
 	</div>
 	<div class="analytics">
 		<a href="staking">Stake</a>
@@ -149,7 +138,7 @@
 			<script src="https://ftm.guru/chart.min.js" type="application/javascript"></script>
 			<script src="https://ftm.guru/chartjs-adapter-date-fns.bundle.min.js" type="application/javascript"></script>
 			-->
-			<script src="e.js"></script>
+			<script src="o.js"></script>
 			<script>
 				CHAINID = 137;
 				RPC_URL = "https://rpc.ankr.com/polygon";
@@ -171,6 +160,10 @@
 
 				ID = 2153;
 				VOTER = "0xaccba5e852ab85e5e3a84bc8e36795bd8cec5c73";
+
+				OTOKEN = "0x3a29cab2e124919d14a6f735b6033a3aad2b260f";
+				O_TO_E = "0x3979d8149099b98cde35e08722f05dc477f55b97";
+
 			</script>
 	</body>
 </html>
