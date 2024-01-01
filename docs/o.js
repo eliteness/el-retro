@@ -226,6 +226,8 @@ async function oRetroToElRetro() {
 	if(!isFinite(_oamt)){notice("Invalid oToken Input!"); return;}
 	_oamt = BigInt(_oamt * 1e18)
 	_OT = new ethers.Contract(OTOKEN, ["function balanceOf(address) public view returns(uint)","function approve(address,uint)","function allowance(address,address) public view returns(uint)","function exerciseWrap(uint) returns(uint _elamt)"], signer);
+	_O_TO_E = new ethers.Contract(O_TO_E, ["function balanceOf(address) public view returns(uint)","function approve(address,uint)","function allowance(address,address) public view returns(uint)","function exerciseWrap(uint) returns(uint _elamt)"], signer);
+
 
 	alvo = await Promise.all([
 		_OT.allowance(window.ethereum.selectedAddress, O_TO_E),
@@ -263,7 +265,7 @@ async function oRetroToElRetro() {
 
 		<h4><u><i>Please Confirm this transaction in your wallet!</i></u></h4>
 	`);
-	let _tr = await _OT.exerciseWrap(_oamt);
+	let _tr = await _O_TO_E.exerciseWrap(_oamt);
 	console.log(_tr);
 	notice(`
 		<h3>Order Submitted!</h3>
@@ -281,7 +283,7 @@ async function oRetroToElRetro() {
 		Minted <img style='height:20px;position:relative;top:4px' src="${WRAPLOGO}"> <u>${fornum(_wamt,18)} ${WRAPNAME}</u> for <img style='height:20px;position:relative;top:4px' src="${BASELOGO}"> <u><b>${fornum(_oamt,18)}</b></u>.
 		<br><br>
 		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
-	`)
+	`);
 	gubs()
 }
 
