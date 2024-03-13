@@ -1,83 +1,91 @@
 <!doctype html>
 <html>
-<meta charset="UTF-8">
-<head>
+	<meta charset="UTF-8">
 <meta name="description" content="El Retro: veRETRO Liquid Wrapper | FTM.guru">
-<meta name="keywords" content="Ftm.guru, Guru Network, Finance, Decentralized Finance, MATIC, Arbitrum, defi, Airdrop, RETRO, El Retro, Retro, Solidly, ftm.guru">
+<meta name="keywords" content="Ftm.guru, Guru Network, Finance, Decentralized Finance,  MATIC, Arbitrum, defi, Airdrop, RETRO, RETRO, Retro, Solidly, ftm.guru">
 <title>El Retro: veRETRO Liquid Wrapper | FTM.guru</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="https://ftm.guru/icons/elretro.png"/>
-<link rel="stylesheet" href="e.css"/>
-<body>
-	<div class="partnership">
-		<h1><span>Mint_ elRETRO </span></h1>
-		<h2>Convert Your Locked veRETRO NFT into Liquid elRETRO Tokens</h2>
-	</div>
-	<div class="mechanism">
-		<div class="analytics" style="position:relative;top:-16px">
-			<a class="equal-gradient-white" href="oretro">Mint with oRETRO</a>
-			<a class="equal-gradient-white" href="veretro">Mint with veRETRO</a>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="https://ftm.guru/icons/elretro.png"/>
+	<link rel="stylesheet" href="e.css"/>
+	<body>
+		<div class="partnership">
+			<h1><span>Redeem_ El Retro </span></h1>
+			<h2>Unlock and get veRETRO from your El Retro!</h2>
+			<br>
 		</div>
-		<div class="amount">
-			<br>
-			<br>
-			<br>
-			<p id="p_cw"><span id="cw" onclick="cw()">Hello 👋 <span id="cw_og">Connect wallet!</span></p>
-			<div align="center">
-				<select class="equal-gradient" id="nft-sel" onchange="quote()">
-					<option value="" selected>Choose a NFT</option>
-				</select>
+		<div class="mechanism">
+			<div class="amount">
+				<br>
+				<p id="p_cw"><span id="cw" onclick="cw()">Hello 👋 <span id="cw_og">Connect wallet!</span></span></p>
+				<!--
+				<p style="">
+					<br>
+					<span id="nft-bal" class="equal-gradient" style="border-radius: 100px;padding: 5px;margin: 5px;position: relative;bottom: 5px;">78,123,456 elRETRO</span>
+					<br>
+					<span style="font-family: light;">Available Balance</span>
+				</p>
+				-->
 			</div>
-			<p><span id="nft-bal">Balance: Loading..</span></p>
-		</div>
-		<div class="input-amount">
-			<br>
-			<div class="input-amount-els">
-				<div>
-					<img class="bigthumb" src="https://ftm.guru/icons/retro.svg" style="border-radius:100px;background:rgba(0,0,0,0.9)"/>
-					<img class="bigthumb_sub" src="img/lock.svg"/>
-				</div>
-				<div class="nft-amt-nums">
-					<span class="nft-amtl" id="nft-amt"><span class="prefill-num">Convert veNFTs of</span></span>
-					<div class="nft-amtl-desc">
-						Locked <b>veRETRO</b>
+			<div class="input-amount">
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="input-amount-els">
+					<div>
+						<img class="bigthumb" src="https://ftm.guru/icons/elretro.png" style="border-radius:25%"/>
+						<img class="bigthumb_sub" src="img/lock.svg" style="opacity: 0;">
+					</div>
+					<div class="nft-amt-nums">
+						<div class="nft-amtl-desc">
+							Redeem <b>elRETRO</b>
+						</div>
+						<input class="light-in in-box" placeholder="Enter Amount" style="margin: 0;" id="in_d">
+						<!--<button class="btn-max" onclick='$("in_d").value=$("bal_lp").textContent'>Max</button>-->
+						<span style="font-family: light_italic;">Available: </span>
+						<span style="font-family:" id="bal_lp">??????</span>
 					</div>
 				</div>
-			</div>
-			<br>
-			<span class="nft-amtl" id="nft-tl"></span>
-			<br><br>
-			<div class="hr-nft"></div>
-			<br><br>
-			<div class="input-amount-els">
-				<div>
-					<img class="bigthumb" src="https://ftm.guru/icons/elretro.png" style="border-radius:25%"/>
-					<img class="bigthumb_sub" src="https://ftm.guru/icons/64.png" style="opacity:0 ;border-radius:25%">
+				<div style="margin-top: -25px;" align="center">
+					<button class="submit equal-gradient btn-max" onclick="split(false)"><span id="claim-offer">Reclaim veRETRO</span></button>
 				</div>
-				<div class="nft-amt-nums">
-					<span class="nft-amtl" id="nft-offer"><span class="prefill-num">Earn MATIC by staking</span></span>
-					<div class="nft-amtl-desc">
-						Liquid $<b>elRETRO</b>
-					</div>
+
+				<br><br>
+
+
+				<div class="hr-nft"></div>
+				<br><br>
+				<div class="earn-stats" style="font-size:1.25em">
+
+					<div class="nft-amtl-desc earn-stats-key"><span style="font-family: light_italic;">Splitting Potential per elRETRO</span></div>
+					<div class="nft-amtl-desc earn-stats-val"><b id="mintrate">1.r</b> veRETRO</div>
+
+					<div class="nft-amtl-desc earn-stats-key"><span style="font-family: light_italic;">Total Redemption Fees</span></div>
+					<div class="nft-amtl-desc earn-stats-val"><b id="split-fee-total">r+b</b>%</div>
+
+					<div class="nft-amtl-desc earn-stats-key"><span style="font-family: light_italic;">Current Redeem Rate</span></div>
+					<div class="nft-amtl-desc earn-stats-val"><b id="split-rate">1.r-f</b> veRETRO</div>
+
 				</div>
+
+				<br><br>
+
 			</div>
+			<!--
+			<div style="margin-top: -25px;" align="center">
+				<button class="submit equal-gradient" onclick="sell()"><span id="claim-offer">Select your veNFT</span></button>
+				<br><br>
+			</div>-->
 		</div>
-		<div style="margin-top: -25px;" align="center">
-			<button class="submit equal-gradient" onclick="sell()"><span id="claim-offer">Select your veNFT</span></button>
-			<br><br>
-			<span style="font-size:1.25em;font-family:light">1 elRETRO = <span id="mintrate">?</span> RETRO</span>
-			<br><br>
-		</div>
-	</div>
-	<div class="analytics">
-			<a class="equal-gradient-white" >Mint</a>
+		<div class="analytics">
+			<a href="./">Mint</a>
 			<a href="./staking">Stake</a>
-			<a href="./split">Split</a>
+			<a class="equal-gradient-white">Split</a>
 			<br><br>
 			<a href="https://dune.com/eliteness/" target="_blank">Analytics</a>
 			<a href="https://retro.finance" target="_blank">Trade</a>
 			<a href="https://ftm.guru/docs" target="_blank">Docs</a>
-	</div>
+		</div>
 
 
 	<div id="note" class="overlay">
@@ -88,6 +96,7 @@
 			</div>
 		</div>
 	</div>
+
 
 
 	<div class="extra">
@@ -106,20 +115,19 @@
 		<br><br>
 	</div>
 
-	<div id="scroll-container" style="display:none">
+	<div id="scroll-container">
 		<div id="scroll-text">
-			 • <span>elRETRO Price: $Unknown (Unknown THE)</span>
+			 • <span>elRETRO Price: $Unknown (Unknown RETRO)</span>
 			 • <span>elRETRO Minting Ratio (veRETRO): 1.Unknown</span>
 			 • <span>Market Cap: $Unknown</span>
-			 • <span>Total Supply: 1,400,000+</span>
-			 • <span>veRETRO Controlled: 1,428,228+</span>
+			 • <span>Total Supply: 20,000+</span>
+			 • <span>veRETRO Controlled: 28,228+</span>
 			 • <span>Collateralization: Unknown%</span>
 			 • <span>elRETRO/WMATIC Liquidity: $Unknown</span>
-			 • <span>elRETRO-Staking (Earn MATIC) APR: Unknown%</span>
+			 • <span>elRETRO-Staking (Earn WTH) APR: Unknown%</span>
 			 • <span>elRETRO/WMATIC-Farming (Earn RETRO) APR: Unknown%</span>
 		<div>
 	<div>
-
 
 
 
@@ -152,19 +160,19 @@
 			<script src="https://ftm.guru/chart.min.js" type="application/javascript"></script>
 			<script src="https://ftm.guru/chartjs-adapter-date-fns.bundle.min.js" type="application/javascript"></script>
 			-->
-			<script src="e.js"></script>
+			<script src="split.js"></script>
 			<script>
 				CHAINID = 137;
 				RPC_URL = "https://rpc.ankr.com/polygon";
 				EXPLORE = "https://polygonscan.com";
 				CHAIN_NAME = "Matic Polygon";
 				CHAIN_GAS = "MATIC";
+				ZERO_ADDR = "0x0000000000000000000000000000000000000000";
 				VENFT = "0xb419ce2ea99f356bae0cac47282b9409e38200fa";
 				VENAME = "veRETRO";
-
-				VENAMM_1 = "0xcc835d13543cec819ac0226dd9ff35b6312b8fca";
-				VENAMM = "0xEaBFc7F90Bb21649018403a234d8388c99EF1cE7";
+				VENAMM = "0xcc835d13543cec819ac0226dd9ff35b6312b8fca";
 				POOLID = "v0.1.0";
+				REBASE_1 = 1691625600e3;//1692230400e3;
 
 				BASENAME = "RETRO";
 				BASELOGO = "https://ftm.guru/icons/retro.svg";
@@ -176,6 +184,14 @@
 
 				ID = 2153;
 				VOTER = "0xaccba5e852ab85e5e3a84bc8e36795bd8cec5c73";
+
+				FARM = "0xc4c807aee35f75c891cb51ef982c98371b1362b4";
+				FARMOLD = "";
+				TEARNED = ["0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270"];
+				TEARNSYM = ["WMATIC"];
+				TEARNIMG = ["https://ftm.guru/icons/matic.svg"]
+
+				MANAGER = "0xEaBFc7F90Bb21649018403a234d8388c99EF1cE7";
 			</script>
 	</body>
 </html>
