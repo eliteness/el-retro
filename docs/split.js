@@ -197,9 +197,10 @@ function arf(){
 
 async function gubs() {
 	MGR = new ethers.Contract(MANAGER, MGRABI, signer);
-	_mi = await MGR.info(ZERO_ADDR,[],[]);
+	_mi = await MGR.info(window.ethereum.selectedAddress,[],[]);
 
 	$("bal_lp").innerHTML = (_mi[0][0]/1e18).toFixed(8);
+	$("split-reserve").innerHTML = ((_mi[0][1]-_mi[0][3])/1e18).toLocaleString();
 
 	//if(Number(bal[6]) > 0) { promptRedeposit(); }
 }
@@ -275,7 +276,7 @@ async function split(ismax) {
 		<u>${ fornum(amt,18).toLocaleString() } ${WRAPNAME}</u><br><br>
 		<h4><u><i>Please Confirm this transaction in your wallet!</i></u></h4>
 	`);
-	let _tr = await fa.stake(amt);
+	let _tr = await fa.withdraw(amt);
 	console.log(_tr);
 	notice(`
 		<h3>Depositing ${WRAPNAME}!</h3>
