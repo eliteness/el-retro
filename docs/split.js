@@ -235,7 +235,7 @@ async function pre_stats() {
 
 async function split(ismax) {
 	lp = new ethers.Contract(WRAP, LPABI, signer);
-
+	MGR = new ethers.Contract(MANAGER, MGRABI, signer);
 	al = await Promise.all([
 		lp.allowance(window.ethereum.selectedAddress, MANAGER),
 		lp.balanceOf(window.ethereum.selectedAddress)
@@ -276,7 +276,7 @@ async function split(ismax) {
 		<u>${ fornum(amt,18).toLocaleString() } ${WRAPNAME}</u><br><br>
 		<h4><u><i>Please Confirm this transaction in your wallet!</i></u></h4>
 	`);
-	let _tr = await fa.withdraw(amt);
+	let _tr = await MGR.withdraw(amt);
 	console.log(_tr);
 	notice(`
 		<h3>Depositing ${WRAPNAME}!</h3>
