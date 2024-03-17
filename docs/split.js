@@ -297,7 +297,7 @@ async function split(ismax) {
 		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
 		<h3>Please Reclaim ${VENAME} in the next transaction after 7 seconds!</h3>
 	`);
-	await sleep(7e6);
+	await sleep(7000);
 	_tr = await MGR.reclaim();
 	console.log(_tr);
 	notice(`
