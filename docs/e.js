@@ -168,6 +168,8 @@ VEABI = [{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","
 
 VMABI = [{"inputs":[{"internalType":"address","name":"ve","type":"address"},{"internalType":"address","name":"e","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"","type":"address"},{"indexed":true,"internalType":"uint256","name":"","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"","type":"uint256"}],"name":"Deposit","type":"event"},{"inputs":[],"name":"elSNEK","outputs":[{"internalType":"contract IelSNEK","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"ID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"converted","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"dao","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"deposit","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"initialize","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"minted","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"bytes","name":"","type":"bytes"}],"name":"onERC721Received","outputs":[{"internalType":"bytes4","name":"","type":"bytes4"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"quote","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_inc","type":"uint256"}],"name":"rawQuote","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_t","type":"address"},{"internalType":"uint256","name":"_a","type":"uint256"}],"name":"rescue","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"d","type":"address"}],"name":"setDAO","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"setID","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"supplied","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"veSNEK","outputs":[{"internalType":"contract IVotingEscrow","name":"","type":"address"}],"stateMutability":"view","type":"function"}]
 
+MGRABI = [{"anonymous": false,"inputs": [{"indexed": true,"internalType": "address","name": "user","type": "address"},{"indexed": false,"internalType": "uint256","name": "nft","type": "uint256"},{"indexed": false,"internalType": "uint256","name": "veAmount","type": "uint256"},{"indexed": false,"internalType": "uint256","name": "shares","type": "uint256"},{"indexed": false,"internalType": "uint256","name": "wen","type": "uint256"}],"name": "Deposit","type": "event"},{"anonymous": false,"inputs": [{"indexed": true,"internalType": "address","name": "user","type": "address"},{"indexed": false,"internalType": "uint256","name": "nft","type": "uint256"},{"indexed": false,"internalType": "uint256","name": "veAmount","type": "uint256"},{"indexed": false,"internalType": "uint256","name": "shares","type": "uint256"},{"indexed": false,"internalType": "uint256","name": "wen","type": "uint256"}],"name": "Withdraw","type": "event"},{"inputs": [],"name": "ELTOKEN","outputs": [{"internalType": "contract IelToken","name": "","type": "address"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "ID","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "VENFT","outputs": [{"internalType": "contract IVotingEscrow","name": "","type": "address"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "VOTER","outputs": [{"internalType": "contract IVoter","name": "","type": "address"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "dao","outputs": [{"internalType": "address","name": "","type": "address"}],"stateMutability": "view","type": "function"},{"inputs": [{"internalType": "uint256","name": "_id","type": "uint256"}],"name": "deposit","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "nonpayable","type": "function"},{"inputs": [],"name": "feesToBurn","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "feesToDao","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "floor","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "getCurrentEpoch","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "getCurrentVote","outputs": [{"internalType": "uint256","name": "_id","type": "uint256"},{"internalType": "uint256","name": "_wen","type": "uint256"},{"internalType": "address[]","name": "_pools","type": "address[]"},{"internalType": "uint256[]","name": "_wt","type": "uint256[]"}],"stateMutability": "view","type": "function"},{"inputs": [{"internalType": "address","name": "_contract","type": "address"}],"name": "getTvl","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [{"internalType": "address","name": "_user","type": "address"},{"internalType": "address[]","name": "_farms","type": "address[]"},{"internalType": "address[]","name": "_pricing","type": "address[]"}],"name": "info","outputs": [{"internalType": "uint256[]","name": "","type": "uint256[]"},{"internalType": "address[]","name": "","type": "address[]"},{"internalType": "uint256[]","name": "","type": "uint256[]"},{"internalType": "uint256[]","name": "","type": "uint256[]"},{"internalType": "uint256[]","name": "","type": "uint256[]"}],"stateMutability": "view","type": "function"},{"inputs": [{"internalType": "address","name": "_vo","type": "address"},{"internalType": "address","name": "_el","type": "address"},{"internalType": "uint256","name": "_id","type": "uint256"}],"name": "initialize","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "address","name": "","type": "address"},{"internalType": "address","name": "","type": "address"},{"internalType": "uint256","name": "","type": "uint256"},{"internalType": "bytes","name": "","type": "bytes"}],"name": "onERC721Received","outputs": [{"internalType": "bytes4","name": "","type": "bytes4"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "price","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "publicPanic","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "uint256","name": "_id","type": "uint256"}],"name": "quote","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [{"internalType": "uint256","name": "_inc","type": "uint256"}],"name": "rawQuote","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [{"internalType": "address","name": "_t","type": "address"},{"internalType": "uint256","name": "_a","type": "uint256"}],"name": "rescue","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "address","name": "d","type": "address"}],"name": "setDAO","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "uint256","name": "_d","type": "uint256"},{"internalType": "uint256","name": "_b","type": "uint256"}],"name": "setFees","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "uint256","name": "_f","type": "uint256"}],"name": "setFloor","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "uint256","name": "_id","type": "uint256"}],"name": "setID","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "address","name": "_m","type": "address"},{"internalType": "bool","name": "_b","type": "bool"}],"name": "setVoteManager","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "address[]","name": "_p","type": "address[]"},{"internalType": "uint256[]","name": "_w","type": "uint256[]"}],"name": "vote","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "uint256","name": "_mi","type": "uint256"}],"name": "voteFrom","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "address","name": "","type": "address"}],"name": "voteManager","outputs": [{"internalType": "bool","name": "","type": "bool"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "voteReset","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "uint256","name": "","type": "uint256"},{"internalType": "uint256","name": "","type": "uint256"}],"name": "votedPools","outputs": [{"internalType": "address","name": "","type": "address"}],"stateMutability": "view","type": "function"},{"inputs": [],"name": "votedTime","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [{"internalType": "uint256","name": "","type": "uint256"},{"internalType": "uint256","name": "","type": "uint256"}],"name": "votedWeights","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "view","type": "function"},{"inputs": [{"internalType": "uint256","name": "_tamt","type": "uint256"}],"name": "withdraw","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"stateMutability": "nonpayable","type": "function"}];
+
 async function gubs() {
 	ve = new ethers.Contract(VENFT, VEABI, provider);
 	bal = await ve.balanceOf(window.ethereum.selectedAddress);
@@ -198,8 +200,28 @@ async function quote() {
 	ve = new ethers.Contract(VENFT,VEABI,provider);
 	vm=new ethers.Contract(VENAMM,VMABI,provider);
 	wrap=new ethers.Contract(WRAP,VEABI,provider);
+	MGR = new ethers.Contract(MANAGER, MGRABI, signer);
+	_mi = await MGR.info(window.ethereum.selectedAddress,[],[]);
+	/*
+			uint[10] memory,
+			0	ELTOKEN.balanceOf(_user),
+			1	ELTOKEN.totalSupply(),
+			2	price(),
+			3	floor,
+			4	feesToDao,
+			5	feesToBurn,
+			6	ID,
+			7	uint(int256(VENFT.locked(ID).amount)),
+			8	VENFT.totalSupply(),
+			9	votedTime
+			1n	price[n]
+			address[] memory,
+			uint[] memory,
+			uint[] memory,
+			uint[] memory
+	 */
 	qd = await Promise.all([
-		ve.locked(ID),
+		{amount: mi[0][7]}, //ve.locked(ID),
 		ve.locked(_id),
 		wrap.totalSupply(),
 		ve.balanceOfNFT(_id)
@@ -221,6 +243,7 @@ async function sell() {
 	ve = new ethers.Contract(VENFT, VEABI, signer);
 	vm = new ethers.Contract(VENAMM,VMABI,signer);
 	wrap=new ethers.Contract(WRAP,VEABI,signer);
+	MGR = new ethers.Contract(MANAGER, MGRABI, signer);
 	alvo = await Promise.all([
 		ve.isApprovedOrOwner(VENAMM,_id),
 		ve.voted(_id),
@@ -283,8 +306,28 @@ async function sell() {
 			<h4><u><i>Please visit the original Gauges at <a target="_blank" href="${DEXLINK}">${DEXLINK}</a>to manage your LP deposits.</i></u></h4>
 		`);
 	}
+
+	_mi = await MGR.info(window.ethereum.selectedAddress,[],[]);
+	/*
+			uint[10] memory,
+			0	ELTOKEN.balanceOf(_user),
+			1	ELTOKEN.totalSupply(),
+			2	price(),
+			3	floor,
+			4	feesToDao,
+			5	feesToBurn,
+			6	ID,
+			7	uint(int256(VENFT.locked(ID).amount)),
+			8	VENFT.totalSupply(),
+			9	votedTime
+			1n	price[n]
+			address[] memory,
+			uint[] memory,
+			uint[] memory,
+			uint[] memory
+	 */
 	qd = await Promise.all([
-		ve.locked(ID),
+		{amount: mi[0][7]}, //ve.locked(ID),
 		ve.locked(_id),
 		wrap.totalSupply(),
 		ve.balanceOfNFT(_id)

@@ -218,6 +218,7 @@ async function pre_stats() {
 			7	uint(int256(VENFT.locked(ID).amount)),
 			8	VENFT.totalSupply(),
 			9	votedTime
+			10	ELTOKEN.allowance(_user, address(this));
 			1n	price[n]
 			address[] memory,
 			uint[] memory,
@@ -254,7 +255,7 @@ async function split(ismax) {
 			${WRAPNAME} requires your approval for Redemptions.<br><br>
 			<h4><u><i>Please Confirm this transaction in your wallet!</i></u></h4>
 		`);
-		let _tr = await lp.approve(MANAGER ,ethers.constants.MaxUint256);
+		_tr = await lp.approve(MANAGER ,ethers.constants.MaxUint256);
 		console.log(_tr);
 		notice(`
 			<h3>Submitting Approval Transaction!</h3>
@@ -276,17 +277,34 @@ async function split(ismax) {
 		<u>${ fornum(amt,18).toLocaleString() } ${WRAPNAME}</u><br><br>
 		<h4><u><i>Please Confirm this transaction in your wallet!</i></u></h4>
 	`);
-	let _tr = await MGR.withdraw(amt);
+	_tr = await MGR.withdraw(amt);
 	console.log(_tr);
 	notice(`
 		<h3>Depositing ${WRAPNAME}!</h3>
-		Your brand new ${VENAME} containing your accrued Gains is on its way!<br>
+		Submitting your ${WRAPNAME} to process redemption..<br>
 		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
 	`);
 	_tw = await _tr.wait()
 	console.log(_tw)
 	notice(`
 		<h3>Redemption completed successfully!</h3>
+		Amount Redeemed:<br>
+		<img style='height:20px;position:relative;top:4px' src="${WRAPLOGO}">
+		<u>${ fornum(amt,18).toLocaleString() } ${WRAPNAME}</u><br>
+		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
+		<h3>Please Reclaim ${VENAME} in the next transction!</h3>
+	`);
+	_tr = await MGR.reclaim();
+	console.log(_tr);
+	notice(`
+		<h3>Reclaiming ${VENAME}!</h3>
+		Your brand new ${VENAME} NFT containing your accrued Gains is on its way!<br>
+		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
+	`);
+	_tw = await _tr.wait()
+	console.log(_tw)
+	notice(`
+		<h3>Reclaiming completed successfully!</h3>
 		<br>Amount Redeemed:<br>
 		<img style='height:20px;position:relative;top:4px' src="${WRAPLOGO}">
 		<u>${ fornum(amt,18).toLocaleString() } ${WRAPNAME}</u><br><br>
