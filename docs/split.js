@@ -204,7 +204,14 @@ async function gubs() {
 
 	$("bal_lp").innerHTML = (_mi[0][0]/1e18).toFixed(8);
 
-	//if(Number(bal[6]) > 0) { promptRedeposit(); }
+	if(_mi[0].length>13){
+		$("reclaim-pending").innerHTML=`
+			<span>Your ${VENAME} #${_mi[0].map(i=>Number(i)).slice(13).join(", #")} are available.
+				<br><br>
+				<a onclick="reclaim()" class="equal-gradient" style="cursor:pointer">Reclaim pending redemptions!</a>
+			</span>
+		`;
+	}
 }
 
 async function pre_stats() {
@@ -235,6 +242,39 @@ async function pre_stats() {
 	$("split-fee-total").innerHTML = fornum5(Number(_mi[0][4])+Number(_mi[0][5]),18-2,2);
 	$("split-rate").innerHTML = fornum5( Number(_mi[0][2])*(1e18-Number(_mi[0][4])+Number(_mi[0][5])),18+18,4);
 	$("split-reserve").innerHTML = ((_mi[0][1]-_mi[0][3])*_mi[0][2]/1e36).toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
+}
+
+async function reclaim() {
+	MGR = new ethers.Contract(MANAGER, MGRABI, signer);
+	_mi = await MGR.info(window.ethereum.selectedAddress,[],[]);
+
+	if(_mi[0].length>13){
+		notice(`
+			<h3>Your ${VENAME} #${_mi[0].map(i=>Number(i)).slice(13).join(", #")} are available.</h3>
+			<br><br>
+			<a onclick="reclaim()" class="equal-gradient" style="cursor:pointer;border-radius:5px;padding:5px;">Reclaiming pending redemptions now.  .</a>
+		`);
+	}
+	else {
+		notice(`You have no pending redemptions.. `);
+		return
+	}
+	_tr = await MGR.reclaim();
+	console.log(_tr);
+	notice(`
+		<h3>Reclaiming ${VENAME}!</h3>
+		Your brand new ${VENAME} NFT containing your accrued Gains is on its way!<br>
+		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
+	`);
+	_tw = await _tr.wait()
+	console.log(_tw)
+	notice(`
+		<h3>Reclaiming completed successfully!</h3>
+		<br>Amount Redeemed:<br>
+		<img style='height:20px;position:relative;top:4px' src="${WRAPLOGO}">
+		<u>${ fornum(amt,18).toLocaleString() } ${WRAPNAME}</u><br><br>
+		<h4><a target="_blank" href="${EXPLORE}/tx/${_tr.hash}">View on Explorer</a></h4>
+	`);
 }
 
 async function split(ismax) {
