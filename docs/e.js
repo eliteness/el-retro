@@ -225,7 +225,7 @@ async function quote() {
 			uint[] memory
 	 */
 	qd = await Promise.all([
-		{amount: mi[0][7]}, //ve.locked(ID),
+		{amount: _mi[0][7]}, //ve.locked(ID),
 		ve.locked(_id),
 		wrap.totalSupply(),
 		ve.balanceOfNFT(_id)
