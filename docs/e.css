@@ -253,7 +253,7 @@ textarea:focus, input:focus {
 	background: -webkit-linear-gradient(left, rgba(255,155,212,0.25), rgba(255,55,55,0.4));
 }
 
-#p_cw{font-size:1em;font-family:light}
+#p_cw{font-size:1em;font-family:light;position:relative;z-index:1;}
 
 #nft-sel {
 	font-size: 0.8em;
