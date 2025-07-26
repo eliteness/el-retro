@@ -240,7 +240,7 @@ async function pre_stats() {
 
 	$("mintrate").innerHTML = fornum5(_mi[0][2],18,4);
 	$("split-fee-total").innerHTML = fornum5(Number(_mi[0][4])+Number(_mi[0][5]),18-2,2);
-	$("split-rate").innerHTML = fornum5( Number(_mi[0][2])*(1e18-Number(_mi[0][4])+Number(_mi[0][5])),18+18,4);
+	$("split-rate").innerHTML = fornum5( Number(_mi[0][2])*(1e18-Number(_mi[0][4])-Number(_mi[0][5])),18+18,4);
 	$("split-reserve").innerHTML = ((_mi[0][1]-_mi[0][3])*_mi[0][2]/1e36).toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
 }
 
